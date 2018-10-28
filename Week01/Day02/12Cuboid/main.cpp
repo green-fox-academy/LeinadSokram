@@ -8,7 +8,12 @@ int main(int argc, char* args[]) {
     // Surface Area: 600
     // Volume: 1000
     
-    
+    double sideA;
+    double sideB;
+    double sideC;
+
+    std::cout << "Surface Area: " << 2 * (sideA + sideB + sideC) << std::endl;
+    std::cout << "Volume: " << sideA * sideB * sideC << std::endl;
 
     return 0;
 }
