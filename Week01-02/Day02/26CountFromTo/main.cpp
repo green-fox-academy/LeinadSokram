@@ -27,9 +27,9 @@ int main(int argc, char* args[]) {
 
     if (smallNumber > bigNumber){
         std::cout << "The second number should be bigger" << std::endl;
-    }else while (smallNumber < bigNumber){
+    }else while (smallNumber <= bigNumber){
         std::cout << smallNumber << std::endl;
-        smallNumber += 1;
+        smallNumber++;
     }
 
     return 0;

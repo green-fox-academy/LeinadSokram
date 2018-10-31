@@ -7,8 +7,8 @@ int main(int argc, char* args[]) {
     int out = 0;
     // if a is even increment out by one
 
-    if (a % 2 == 0){
-        out = out +1;
+    if ((int)a % 2 == 0){
+        out++;
     }
 
     std::cout << out << std::endl;
@@ -39,11 +39,11 @@ int main(int argc, char* args[]) {
     // and isBonus is false decrement c by 1
     // if isBonus is true c should remain the same
 
-    if  ((isBonus = false) && (credits >= 50)){
+    if  ((isBonus == 0) && (credits >= 50)){
         c = c - 2;
-    }else if ((isBonus = false) && (credits < 50)){
+    }else if ((isBonus == 0) && (credits < 50)){
         c = c - 1;
-    }else if (isBonus = true){
+    }else if (isBonus == 1){
         c = c;
     }
 

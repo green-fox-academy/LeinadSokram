@@ -31,56 +31,38 @@ int main(int argc, char* args[]) {
     int f1 = 123;
     int f2 = 345;
     // tell if f1 is bigger than f2 (print as a boolean)
-    if (f1 > f2){
-        std::cout << "1" << std::endl;
-    }else{
-        std::cout << "0" << std::endl;
-    }
+    bool fb = (f1 > f2);
+    std::cout << fb << std::endl;
 
     int g1 = 350;
     int g2 = 200;
     // tell if the double of g2 is bigger than g1 (print as a boolean)
-    if ((g2 * 2) > g1){
-        std::cout << "1" << std::endl;
-    }else{
-        std::cout << "0" << std::endl;
-    }
+    bool gb = (g2 * 2 > g1);
+    std::cout << gb << std::endl;
 
     int h = 135798745;
     // tell if it has 11 as a divisor (print as a boolean)
-    int numberH = 135798745 % 11;
-    if (numberH == 0){
-        std::cout << "1" << std::endl;
-    }else {
-        std::cout << "0" << std::endl;
-    }
+    bool hb = (h % 11 == 0);
+    std::cout << hb << std::endl;
 
     int i1 = 10;
     int i2 = 3;
     // tell if i1 is higher than i2 squared and smaller than i2 cubed (print as a boolean)
-    int numberIA = i2 * i2;
-    int numberIB = i2 * i2 * i2;
-    if (numberIA < i1 < numberIB){
-        std::cout << "1" << std::endl;
-    }else {
-        std::cout << "0" << std::endl;
-    }
+    bool ib = (i2 * i2) < i1 < (i2 * i2 * i2);
+    std::cout << ib << std::endl;
 
     int j = 1521;
     // tell if j is dividable by 3 or 5 (print as a boolean)
-    int j1 = 1521 % 3;
-    int j2 = 1521 % 5;
-    if (j1 == 0){
-        std::cout << "1" << std::endl;
-    } else if (j2 == 0) {
-        std::cout << "1" << std::endl;
-    }else{
-        std::cout << "0" << std::endl;
-    }
+    bool j3 = (j % 3 == 0);
+    bool j5 = (j % 5 == 0);
+    bool jb = (j3 || j5);
+    std::cout << jb << std::endl;
 
     std::string k = "Apple";
 
     //fill the k variable with its content 4 times
+    k = k + " " + k;
+    k = k + " " + k;
 
     std::cout << k << std::endl;
 
