@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-int printParams(int p);
+void printParams(std::string p);
 
 int main(int argc, char* args[]) {
 
@@ -15,16 +15,17 @@ int main(int argc, char* args[]) {
     // printParams("first", "second", "third", "fourth")
     // ...
 
+    std::string inputWords;
+    std::cout << "Please enter a word:" << std::endl;
+    std::cin >> inputWords;
 
-
-    std::cout <<  << std::endl;
+    printParams(inputWords);
 
     return 0;
 }
 
-int printParams(int p){
+void printParams(std::string p){
 
-
-    Return ;
+    std::cout << p << std::endl;
 
 }

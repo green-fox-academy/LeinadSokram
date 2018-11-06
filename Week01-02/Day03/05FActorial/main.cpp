@@ -19,11 +19,10 @@ int main(int argc, char* args[]) {
 
 float factorio(float f){
 
-    float a = 1;
     float total = 1;
-    while (a <= f){
+
+    for (int a = 1; a <= f; a++){
         total = total * a;
-        a += 1;
     }
 
     return total;

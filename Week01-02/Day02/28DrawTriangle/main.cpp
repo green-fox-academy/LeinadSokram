@@ -22,6 +22,7 @@ int main(int argc, char* args[]) {
     while (start <= triangle){
         std::cout << stars << std::endl;
         start += 1;
+        stars = stars + "*";
     }
 
     return 0;

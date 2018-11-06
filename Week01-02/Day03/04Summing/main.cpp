@@ -1,31 +1,30 @@
 #include <iostream>
 #include <string>
 
-int sum(int s);
+int sum(int numberFromMain);
 
 int main(int argc, char* args[]) {
 
     // - Write a function called `sum` that sum all the numbers
     //   until the given parameter and returns with an integer
 
-    int parameter;
+    int givenParameter;
     std::cout << "Please enter a parameter: " << std::endl;
-    std::cin >> parameter;
+    std::cin >> givenParameter;
 
-    std::cout << "The sum of all numbers until the given parameter is: " << sum(parameter) << std::endl;
+    std::cout << "The sum of all numbers until the given parameter is: " << sum(givenParameter) << std::endl;
 
     return 0;
 }
 
-int sum(int s){
+int sum(int numberFromMain){
 
-    int a = 0;
-    int total = 0;
-    while (a <= s){
-        total = total + a;
-        a += 1;
+    int totalSum = 0;
+
+    for(int i = 0; i <= numberFromMain; i++){
+        totalSum += + i;
     }
 
-    return total;
+    return totalSum;
 
 }
