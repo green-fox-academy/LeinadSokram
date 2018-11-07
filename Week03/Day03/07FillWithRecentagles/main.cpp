@@ -1,13 +1,13 @@
+// Exercise:
+// draw four different size and color rectangles.
+// avoid code duplication.
+
 #include <iostream>
 #include <SDL.h>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-
-//Draws geometry on the canvas
-void draw();
-
 
 //Starts up SDL and creates window
 bool init();
@@ -21,12 +21,6 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw()
-{
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
-}
-
 bool init()
 {
     //Initialize SDL
@@ -37,7 +31,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Line in the middle", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Four rectangles", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -99,7 +93,25 @@ int main( int argc, char* args[] )
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(gRenderer);
 
-        draw();
+        int xCoordinate = 0;
+        int yCoordinate = 0;
+        int horizontalLength = 50;
+        int verticalLength = 50;
+        int colorRed = 0x00;
+
+        for (int i = 0; i < 4; i++) {
+
+            SDL_SetRenderDrawColor(gRenderer, colorRed, 0x00, 0x00, 0xFF);
+            SDL_Rect rectangle = {xCoordinate, yCoordinate, horizontalLength, verticalLength};
+            SDL_RenderFillRect(gRenderer, &rectangle);
+
+            xCoordinate += 100;
+            yCoordinate += 50;
+            horizontalLength += 20;
+            verticalLength += 40;
+            colorRed += 50;
+
+        }
 
         //Update screen
         SDL_RenderPresent(gRenderer);

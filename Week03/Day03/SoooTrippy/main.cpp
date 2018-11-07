@@ -1,5 +1,7 @@
 #include <iostream>
 #include <SDL.h>
+#include <cstdlib>
+#include <ctime>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -7,7 +9,6 @@ const int SCREEN_HEIGHT = 480;
 
 //Draws geometry on the canvas
 void draw();
-
 
 //Starts up SDL and creates window
 bool init();
@@ -23,8 +24,25 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // draw a red horizontal line to the canvas' middle.
-    // draw a green vertical line to the canvas' middle.
+    // Create a line drawing function that takes 2 parameters:
+    // The x and y coordinates of the line's starting point
+    // and draws a line from that point to the center of the canvas.
+    // Draw at least 3 lines with that function. Use loop for that.
+
+    //srand(time(0));
+
+    int numberOfLines = rand();
+
+    for (int i = 0; i < numberOfLines; i++) {
+
+        int xCoordinate = rand() % SCREEN_WIDTH;
+        int yCoordinate = rand() % SCREEN_HEIGHT;
+        SDL_SetRenderDrawColor(gRenderer, rand()%150 + 100, rand()%150 + 100, rand()%150 + 100, 0xFF);
+        SDL_RenderDrawLine(gRenderer, xCoordinate, yCoordinate, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+
+
+    }
+
 }
 
 bool init()
