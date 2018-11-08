@@ -3,13 +3,16 @@
 
 int main(int argc, char* args[]) {
 
-    // - Create an array variable named `ai`
+    // - Create an array variable named `aj`
     //   with the following content: `[3, 4, 5, 6, 7]`
-    // - Print the sum of the elements in `ai`
+    // - Reverse the order of the elements in `aj`
+    // - Print the elements of the reversed `aj`
 
-    int ai[] = {3,4,5,6,7};
+    int aj[5] = {3,4,5,6,7};
 
-    std::cout << << std::endl;
+    for (int i = 4; i >= 0; i--){
+        std::cout << aj[i] << std::endl;
+    }
 
     return 0;
 }

@@ -12,10 +12,16 @@ int main(int argc, char* args[]) {
     // - In `colors[2]` store the shades of pink:
     //   `"orchid", "violet", "pink", "hot pink"`
 
-    std::string colors[] = {"lime", "forest green", "olive", "pale green", "spring green"};
-    std::string colors[] = {"orange red", "red", "tomato"};
-    std::string colors[] = {"orchid", "violet", "pink", "hot pink"};
+    std::string greenArray[5] = {"lime", "forest green", "olive", "pale green", "spring green"};
+    std::string redArray[3] = {"orange red", "red", "tomato"};
+    std::string purpleArray[4] = {"orchid", "violet", "pink", "hot pink"};
 
+    std::string allColorsArray[3][5] = {{greenArray},{redArray},{purpleArray}};
+
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 5, j++){
+            std::cout << i << "," << j << std::endl;
+        }
 
 
     return 0;

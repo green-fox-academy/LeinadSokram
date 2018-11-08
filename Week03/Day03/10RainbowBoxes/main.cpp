@@ -2,7 +2,6 @@
 #include <SDL.h>
 #include <math.h>
 
-
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -24,14 +23,22 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // create a square drawing function that takes 1 parameter:
-    // the square size
-    // and draws a square of that size to the center of the canvas.
-    // draw at least 3 squares with that function.
-    // the squares should not be filled otherwise they will hide each other
-    // avoid code duplication.
+    // Create a square drawing function that takes 2 parameters:
+    // The square size, and the fill color,
+    // and draws a square of that size and color to the center of the canvas.
+    // Create a loop that fills the canvas with rainbow colored squares.
 
     int squareSize = 10000;
+
+    SDL_Color red = {0xFF, 0x00, 0x00, 0xFF};
+
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF); //red
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x80, 0x00, 0xFF); //orange
+    SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0x00, 0xFF); //yellow
+    SDL_SetRenderDrawColor(gRenderer, 0x00, 0xFF, 0x00, 0xFF); //green
+    SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0xFF, 0xFF); //blue
+    SDL_SetRenderDrawColor(gRenderer, 0x3F, 0x00, 0xFF, 0xFF); //indigo
+    SDL_SetRenderDrawColor(gRenderer, 0x7F, 0x00, 0xFF, 0xFF); //violet
 
     for (int i = 0; i < 10; i++) {
 
@@ -40,7 +47,6 @@ void draw()
         SDL_Rect squares = {SCREEN_WIDTH/2 - sideSize/2, SCREEN_HEIGHT/2 - sideSize/2, sideSize, sideSize};
         SDL_RenderDrawRect(gRenderer, &squares);
         squareSize += 10000;
-
     }
 
 }
@@ -55,7 +61,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Rainbow box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;

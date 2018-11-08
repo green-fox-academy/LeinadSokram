@@ -8,8 +8,13 @@ int main(int argc, char* args[]) {
     // - Print the sum of the elements in `ai`
 
     int ai[] = {3,4,5,6,7};
+    int initialNumber = 0;
 
-    std::cout << << std::endl;
+    for (int i = 0; i < 5; i++){
+        initialNumber += ai[i];
+    }
+
+    std::cout << "The sum of elements is: " << initialNumber << std::endl;
 
     return 0;
 }

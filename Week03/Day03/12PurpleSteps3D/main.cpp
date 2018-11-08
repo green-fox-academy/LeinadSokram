@@ -1,7 +1,5 @@
 #include <iostream>
 #include <SDL.h>
-#include <math.h>
-
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
@@ -24,23 +22,28 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // create a square drawing function that takes 1 parameter:
-    // the square size
-    // and draws a square of that size to the center of the canvas.
-    // draw at least 3 squares with that function.
-    // the squares should not be filled otherwise they will hide each other
-    // avoid code duplication.
+    // Reproduce this:
+    // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
+    // Pay attention for the outlines as well
 
-    int squareSize = 10000;
+    int numberOfSquares = 5;
+    int coordinateX = 10;
+    int coordinateY = 10;
+    int size = 10;
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < numberOfSquares; i++) {
 
-        int sideSize = sqrt(squareSize);
+        SDL_SetRenderDrawColor(gRenderer, 0x99, 0x33, 0xCC, 0xFF);
+        SDL_Rect purpleSquare = {coordinateX, coordinateY, size, size};
+        SDL_RenderFillRect(gRenderer, &purpleSquare);
+
         SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0xFF);
-        SDL_Rect squares = {SCREEN_WIDTH/2 - sideSize/2, SCREEN_HEIGHT/2 - sideSize/2, sideSize, sideSize};
-        SDL_RenderDrawRect(gRenderer, &squares);
-        squareSize += 10000;
+        SDL_Rect blackOutline = {coordinateX, coordinateY, size, size};
+        SDL_RenderDrawRect(gRenderer, &blackOutline);
 
+        coordinateX += size;
+        coordinateY += size;
+        size += 20;
     }
 
 }
@@ -55,7 +58,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Purple steps 3D", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;

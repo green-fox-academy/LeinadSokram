@@ -15,16 +15,19 @@ int main(int argc, char* args[]) {
     //
     // - Print this two dimensional array to the output
 
-    int m1;
-    int m2;
-    std::cout << "Enter the first number of the matrix:" << std::endl;
-    std::cin >> m1;
-    std::cout << "Enter the second number of the matrix:" << std::endl;
-    std::cin >> m2;
+    int sizeOfMatrix;
+    std::cout << "Enter the size of the matrix:" << std::endl;
+    std::cin >> sizeOfMatrix;
 
-    int matrix[m1][m2] = {1,0};
+    int matrix[sizeOfMatrix][sizeOfMatrix] = {{1,0},{0,1}};
 
-    std::cout << matrix << std::endl;
+
+    for(int i = 0; i < sizeOfMatrix; i++)
+        for(int j = 0; j < sizeOfMatrix; j++){
+            std::cout << matrix[i][j] << " " << matrix[i][j+1] << std::endl;
+        }
+
+
 
     return 0;
 }

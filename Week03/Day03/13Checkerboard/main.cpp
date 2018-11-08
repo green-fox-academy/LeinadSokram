@@ -1,10 +1,8 @@
 #include <iostream>
 #include <SDL.h>
-#include <math.h>
-
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 640;
+const int SCREEN_WIDTH = 480;
 const int SCREEN_HEIGHT = 480;
 
 //Draws geometry on the canvas
@@ -24,24 +22,9 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // create a square drawing function that takes 1 parameter:
-    // the square size
-    // and draws a square of that size to the center of the canvas.
-    // draw at least 3 squares with that function.
-    // the squares should not be filled otherwise they will hide each other
-    // avoid code duplication.
+    // Fill the canvas with a checkerboard pattern.
 
-    int squareSize = 10000;
 
-    for (int i = 0; i < 10; i++) {
-
-        int sideSize = sqrt(squareSize);
-        SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0xFF);
-        SDL_Rect squares = {SCREEN_WIDTH/2 - sideSize/2, SCREEN_HEIGHT/2 - sideSize/2, sideSize, sideSize};
-        SDL_RenderDrawRect(gRenderer, &squares);
-        squareSize += 10000;
-
-    }
 
 }
 
@@ -55,7 +38,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Center box function", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Checkerboard", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;

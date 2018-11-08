@@ -7,7 +7,13 @@ int main(int argc, char* args[]) {
     //   with the following content: `["koal", "pand", "zebr"]`
     // - Add all elements an `"a"` at the end
 
-    std::string animals[] = {"koal", "pand", "zebr"};
+    std::string animals[3] = {"koal", "pand", "zebr"};
+    std::string appendA = "a";
+
+    for (int i = 0; i < 3; i++){
+        animals[i].push_back(appendA);
+        std::cout << animals[i] << std::endl;
+    }
 
 
     return 0;
