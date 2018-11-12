@@ -1,0 +1,10 @@
+Black_Lotus A 0
+Ancestral_Recall U 1
+Time_Walk U 2
+Mox_Sapphire A 0
+Mox_Jet A 0
+Mox_Ruby A 0
+Mox_Emerald A 0
+Mox_Pearl A 0
+Timetwister U 3
+Library_of_Alexandria L 0
