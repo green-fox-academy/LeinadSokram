@@ -1,8 +1,14 @@
 #include <iostream>
+#include "Sharpie.h"
 
 int main() {
 
-    std::cout << "Hello, World!" << std::endl;
+    Sharpie firstSharpie("yellow", 1.1);
+
+    firstSharpie.use(10);
+
+
+    std::cout << firstSharpie.getAmount() << std::endl;
 
     return 0;
 }

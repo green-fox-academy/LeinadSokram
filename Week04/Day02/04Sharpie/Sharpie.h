@@ -6,18 +6,19 @@ class Sharpie {
 
     public:
 
-        Sharpie() {
+        Sharpie(std::string color, float width) {
             _inkAmount = 100;
+            _color = color;
+            _width = width;
         }
 
-    Sharpie(const std::string &_color, float _width, float _inkAmount) : _color(_color), _width(_width),
-                                                                         _inkAmount(_inkAmount) {}
-
+        void use(float a);
+        float getAmount();
 
 private:
 
         std::string _color;
-        float _width{};
+        float _width;
         float _inkAmount;
 
 };
