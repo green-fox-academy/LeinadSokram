@@ -3,16 +3,19 @@
 
 #include "Person.h"
 
-class Sponsor: protected Person{};
+class Sponsor: protected Person{
 
-class Sponsor {
 public:
-    introduce();
-    hire();
-    getGoal();
+    Sponsor(const std::string &name, int age, Gender gender, const std::string &company, int hiredStudents);
+
+    void introduce() override;
+    int hire();
+    void getGoal() override;
+
 private:
     std::string _company;
     int _hiredStudents;
+
 };
 
 

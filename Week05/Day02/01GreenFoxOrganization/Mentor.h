@@ -3,15 +3,23 @@
 
 #include "Person.h"
 
-class Mentor: protected Person{};
-
-class Mentor {
-public:
-    getGoal();
-    introduce();
-protected:
-    int _level;
+enum class Level {
+    JUNIOR,
+    INTERMEDIATE,
+    SENIOR
 };
 
+class Mentor: public Person {
+public:
+    Mentor(const std::string &name, int age, Gender gender, Level level);
+
+    void getGoal() override;
+    void introduce() override;
+    std::string getLevel();
+
+private:
+    Level _level;
+
+};
 
 #endif

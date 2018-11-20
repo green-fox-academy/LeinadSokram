@@ -3,17 +3,19 @@
 
 #include "Person.h"
 
-class Student: protected Person{};
+class Student: public Person {
 
-class Student {
 public:
-    getgoal();
-    introduce();
-    skipDays(numberOfDays);
-protected:
+    Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization);
+
+    void getGoal() override;
+    void introduce() override;
+    void skipDays(int numberOfDays);
+
+private:
     std::string _previousOrganization;
     int _skippedDays;
-};
 
+};
 
 #endif

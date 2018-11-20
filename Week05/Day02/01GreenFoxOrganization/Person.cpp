@@ -2,10 +2,18 @@
 
 Person::Person(const std::string &name, int age, Gender gender) : _name(name), _age(age), _gender(gender) {}
 
-std::string Person::introduce() {
-    return "Hi, I'm " << _name << ", a " << _age << " year old " << _gender << ".";
+void Person::introduce() {
+    std::cout << "Hi, I'm " << _name << ", a " << _age << " year old " << getGender() << "." << std::endl;
 }
 
-std::string Person::getGoal() {
-    return "My goal is: Live for the moment!";
+void Person::getGoal() {
+    std::cout << "My goal is: Live for the moment!" << std::endl;
+}
+
+std::string Person::getGender() {
+    if (_gender == Gender::FEMALE) {
+        return "female";
+    } else {
+        return "male";
+    }
 }
