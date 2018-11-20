@@ -3,8 +3,16 @@
 Student::Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization) :
 Person(name, age, gender), _previousOrganization(previousOrganization), _skippedDays(0) {}
 
-void Person::getGoal() {
-    std::cout << "My goal is: Live for the moment!" << std::endl;
+Student::Student() {
+    _name = "Jane Doe";
+    _age = 30;
+    _gender = Gender::FEMALE;
+    _previousOrganization = "The School of Life";
+    _skippedDays = 0;
+}
+
+void Student::getGoal() {
+    std::cout << "My goal is: Be a junior software developer." << std::endl;
 }
 
 void Student::introduce() {

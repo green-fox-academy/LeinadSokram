@@ -9,13 +9,16 @@
 class Cohort {
 
 public:
-    addStudent(Student*);
-    addMentor(Mentor*);
+    Cohort(const std::string &name);
+
+    void addStudent(Student* student);
+    void addMentor(Mentor* mentor);
     void info();
+
 private:
     std::string _name;
-    std::vector<Students> _students;
-    std::vector<Mentors> _mentors;
+    std::vector<Student*> _students;
+    std::vector<Mentor*> _mentors;
 
 };
 

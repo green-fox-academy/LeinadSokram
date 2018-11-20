@@ -12,6 +12,7 @@ enum class Level {
 class Mentor: public Person {
 public:
     Mentor(const std::string &name, int age, Gender gender, Level level);
+    Mentor();
 
     void getGoal() override;
     void introduce() override;

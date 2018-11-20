@@ -7,6 +7,7 @@ class Student: public Person {
 
 public:
     Student(const std::string &name, int age, Gender gender, const std::string &previousOrganization);
+    Student();
 
     void getGoal() override;
     void introduce() override;
