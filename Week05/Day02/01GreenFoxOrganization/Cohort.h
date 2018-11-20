@@ -1,0 +1,10 @@
+#ifndef INC_01GREENFOXORGANIZATION_COHORT_H
+#define INC_01GREENFOXORGANIZATION_COHORT_H
+
+
+class Cohort {
+
+};
+
+
+#endif
