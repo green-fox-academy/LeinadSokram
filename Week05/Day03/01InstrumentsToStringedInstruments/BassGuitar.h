@@ -5,6 +5,13 @@
 
 class BassGuitar: public StringedInstrument {
 
+public:
+
+    BassGuitar();
+    BassGuitar(int numberOfStrings);
+
+    std::string sound() override;
+
 };
 
 

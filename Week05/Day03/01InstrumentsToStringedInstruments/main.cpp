@@ -23,6 +23,6 @@ int main( int argc, char* args[] )
     BassGuitar bassGuitar2(5);
 
     std::cout << "Test 2 Play" << std::endl;
-    //guitar2.play();
-    //bassGuitar2.play();
+    guitar2.play();
+    bassGuitar2.play();
 }

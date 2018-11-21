@@ -7,10 +7,11 @@ class ElectricGuitar: public StringedInstrument {
 
 public:
 
-    void play() override;
-    void sound() override;
+    ElectricGuitar();
+    ElectricGuitar(int numberOfStrings);
+
+    std::string sound() override;
 
 };
-
 
 #endif

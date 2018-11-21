@@ -6,8 +6,13 @@
 class StringedInstrument: public Instrument {
 
 public:
-    virtual void sound() = 0;
-    void getStrings();
+    StringedInstrument(int numberOfStrings);
+
+
+    virtual std::string sound() = 0;
+    int getStrings();
+
+    void play() override;
 
 protected:
     int _numberOfStrings;

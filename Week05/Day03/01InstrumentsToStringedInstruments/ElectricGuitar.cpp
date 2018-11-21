@@ -1,13 +1,9 @@
 #include "ElectricGuitar.h"
 
-void ElectricGuitar::play() {
-    std::cout << getName() << ", a " << getStrings() << "-stringed instrument that goes " << sound() << std::endl;
-}
+ElectricGuitar::ElectricGuitar() : StringedInstrument(6) {}
 
-void ElectricGuitar::sound() {
-    std::cout << "Twang" << std::endl;
-}
+ElectricGuitar::ElectricGuitar(int numberOfStrings) : StringedInstrument(numberOfStrings) {}
 
-void StringedInstrument::getStrings() {
-    _numberOfStrings = 6;
+std::string ElectricGuitar::sound() {
+    return "Twang";
 }

@@ -5,6 +5,14 @@
 
 class Violin: public StringedInstrument {
 
+public:
+
+    Violin();
+    Violin(int numberOfStrings);
+
+    std::string sound() override;
+
+
 };
 
 
