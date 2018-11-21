@@ -4,20 +4,16 @@
 #include <iostream>
 #include <string>
 
-enum class Name {
-    ELECTRIC_GUITAR,
-    BASS_GUITAR,
-    VIOLIN
-};
-
 class Instrument {
 
 public:
+    Instrument(const std::string &name);
+
     virtual void play() = 0;
     std::string getName();
 
 protected:
-    Name _name;
+    std::string _name;
 
 };
 
