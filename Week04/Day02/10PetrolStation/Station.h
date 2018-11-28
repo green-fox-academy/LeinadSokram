@@ -4,11 +4,13 @@
 #include "Car.h"
 #include <string>
 
-class Station {
+class Station
+{
 
 public:
     Station(int gasAmount);
-    std::string fill(Car);
+
+    void fill(Car &car);
 
 private:
     int _gasAmount;

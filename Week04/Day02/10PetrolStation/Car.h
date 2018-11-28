@@ -1,13 +1,15 @@
 #ifndef INC_10PETROLSTATION_CAR_H
 #define INC_10PETROLSTATION_CAR_H
 
-class Car {
+class Car
+{
 
 public:
     Car(int gasAmount, int capacity);
 
     bool isFull();
-    int fill();
+
+    void fill();
 
 private:
     int _gasAmount;

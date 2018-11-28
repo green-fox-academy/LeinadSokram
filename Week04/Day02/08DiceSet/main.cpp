@@ -12,10 +12,9 @@ int main(int argc, char* args[])
     DiceSet diceSet;
     diceSet.roll();
 
-    for (int i = 0; i < diceSet.getCurrent().size(); i++) {
-        if (diceSet.getCurrent(i) != 6) {
-            diceSet.roll();
-        }
+    while (diceSet.getCurrent(i) != 6) {
+            diceSet.roll(i);
+            std::cout << diceSet.getCurrent(i) << std::endl;
     }
 
     return 0;
