@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 std::string ticTacResult (std::string fileName);
 
@@ -30,22 +31,21 @@ std::string ticTacResult (std::string fileName) {
         std::cout << "Something went wrong!" << std::endl;
     }
 
-    std::string row1;
-    std::string row2;
-    std::string row3;
-    std::string gameArray[3][3];
+    std::string row;
+    std::vector<std::string> gameArray;
 
-    while (game >> row1 >> row2 >> row3)  {
-        std::string gameArray[3][3] = {row1, row2, row3, row1, row2, row3, row1, row2, row3};
+    while (game >> row) {
+        gameArray.push_back(row);
     }
 
-    if (gameArray[0][0] == "X" && gameArray[0][1] == "X" && gameArray[0][2] == "X") //...etc
-
-
-    for ( int i = 0; i < 3; i++ )
-    for ( int j = 0; j < 3; j++ ) {
-        if ()
-        std::cout << gameArray[i][j]<< std::endl;
+    for (int i = 0; i < 3; i++) {
+        if (gameArray[i] == "OOO") {
+            return "O ";
+        } else if (gameArray[i] == "XXX") {
+            return "X ";
+        } else {
+            return "draw ";
+        }
     }
 
 }
