@@ -4,7 +4,7 @@
 
 int main(int argc, char* args[])
 {
-    Fleet fleet;
+    Fleet fleet; //(so now "fleet" can use "Fleet" class's functions)
     // Create a fleet of things to have this output:
     // 1. [ ] Get milk
     // 2. [ ] Remove the obstacles
