@@ -11,8 +11,8 @@ class Fleet
 public:
     Fleet();
 
-    void add(const Thing& thing); //(this function adds new elements to "things" vector)
-    std::string toString(); //(this lists the "things" vector, adding a new number before it. Also in main)
+    void add(const Thing& thing);
+    std::string toString();
 
 private:
     std::vector<Thing> things;
