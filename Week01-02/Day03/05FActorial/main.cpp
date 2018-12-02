@@ -1,27 +1,26 @@
 #include <iostream>
 #include <string>
 
-float factorio(float f);
+long long factorio(int f);
 
-int main(int argc, char* args[]) {
-
+int main(int argc, char* args[])
+{
     // - Create a function called `factorio`
     //   that returns it's input's factorial
 
-    float number;
+    int number;
     std::cout << "Please enter a number: " << std::endl;
     std::cin >> number;
-
     std::cout << "The factorial of that number is " << factorio(number) << std::endl;
 
     return 0;
 }
 
-float factorio(float f){
+long long factorio(int f)
+{
+    long long total = 1;
 
-    float total = 1;
-
-    for (int a = 1; a <= f; a++){
+    for (int a = 1; a <= f; a++) {
         total = total * a;
     }
 
