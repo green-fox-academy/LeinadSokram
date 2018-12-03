@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char* args[])
+int main(int argc, char *args[])
 {
     std::string example("In a dishwasher far far away");
-    std::string from = "dishwasher";
-    int start_pos = example.find(from);
-    example.replace(start_pos, from.length(), "galaxy");
+    std::string changeThisWord = "dishwasher";
+    int changeFromHere = example.find(changeThisWord);
+    example.replace(changeFromHere, changeThisWord.length(), "galaxy");
 
     // I would like to replace "dishwasher" with "galaxy" in this example, but it has a problem.
     // Please fix it for me!
