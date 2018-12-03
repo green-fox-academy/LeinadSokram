@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char* args[])
+int main(int argc, char *args[])
 {
     std::string url("https//www.reddit.com/r/nevertellmethebots");
 
