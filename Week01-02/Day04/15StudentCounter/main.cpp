@@ -7,17 +7,39 @@
 std::vector<std::string>
 getChildrenWithMoreThanFourCandies(const std::vector<std::pair<std::string, std::map<std::string, int>>> &students)
 {
+    std::vector<std::string> sweetChildren;
 
+    for (int i = 0; i < students.size(); ++i) {
+        if (students[i] > 4) //this should check if a child has more than 4 candy. But how do you delve into that?
+        {
+            sweetChildren.push_back(students[i]) //Then this should put said children to the new vector.
+        }
+    }
+
+    return sweetChildren;
 }
 
 int sumOfAgeWithLessThanFiveCandies(const std::vector<std::pair<std::string, std::map<std::string, int>>> &students)
 {
+    int ageSum;
 
+    for (int i = 0; i < students.size(); ++i) {
+        if (students[i] < 5) //this should check if a child has less than 4 candy. But how do you delve into that?
+        {
+            ageSum += students[i] //Then this should add said children's age to the new intiger. Again, how do you delve into it?.
+        }
+    }
+
+    return ageSum;
 }
 
 int main(int argc, char *args[])
 {
     std::vector<std::pair<std::string, std::map<std::string, int>>> students;
+    //This is a vector called "students" which pairs
+    // - A string...
+    // - with a map, which in turn consists of
+    //      - Key strings paired to numbers
 
     std::map<std::string, int> TheodorData;
     TheodorData.insert(std::make_pair("age", 9));
