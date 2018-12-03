@@ -1,21 +1,9 @@
 #include <iostream>
 #include <string>
 
-std::string reverse(const std::string& text)
-{
-std::string correct = text;
-int x = 0;
-int y = correct.length()-1;
-for(int z = 0; z < correct.size() / 2; z++){
-    std::swap(correct[x], correct[y]);
-    x = x + 1;
-    y = y - 1;
-}
+std::string reverse(const std::string &text);
 
-return correct;
-}
-
-int main(int argc, char* args[])
+int main(int argc, char *args[])
 {
     std::string reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
@@ -27,4 +15,20 @@ int main(int argc, char* args[])
     std::cout << reverse(reversed) << std::endl;
 
     return 0;
+}
+
+std::string reverse(const std::string &text)
+{
+    std::string correct = text;
+    int x = 0;
+    int y = correct.length() - 1;
+
+    for (int z = 0; z < correct.size() / 2; z++)
+    {
+        std::swap(correct[x], correct[y]);
+        x++;
+        y--;
+    }
+
+    return correct;
 }

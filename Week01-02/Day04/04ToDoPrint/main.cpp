@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char* args[])
+int main(int argc, char *args[])
 {
     std::string todoText = " - Buy milk\n";
     // Add "My todo:" to the beginning of the todoText
@@ -15,10 +15,8 @@ int main(int argc, char* args[])
     //  - Download games
     //      - Diablo
 
-
     todoText.insert(0, "My todo:\n");
     todoText.append(" - Download games\n\t- Diablo");
-
     std::cout << todoText << std::endl;
 
     return 0;
