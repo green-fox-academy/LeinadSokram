@@ -14,16 +14,16 @@ int main()
     int guessedNumber;
 
     printf("Guess the number!\n");
-    scanf("%d", guessedNumber);
+    scanf("%d", &guessedNumber);
 
     while (guessedNumber != storedNumber) {
         if (guessedNumber < storedNumber) {
             printf("The stored number is higher. Try again!\n");
-            scanf("%d", guessedNumber);
+            scanf("%d", &guessedNumber);
         }
         else if (guessedNumber > storedNumber) {
             printf("The stored number is lower. Try again!\n");
-            scanf("%d", guessedNumber);
+            scanf("%d", &guessedNumber);
         }
         if (guessedNumber == storedNumber) {
             printf("You found the number: %d", storedNumber);
