@@ -49,7 +49,7 @@ int main()
 
     std::cout << "The number of green cars is " << getGreenCarNumber(carVector) << std::endl;
     std::cout << "The weight of the fastest car is " << getFastestCarWeight(CarVector) << std::endl;
-    std::cout << "The number of green cars is " << areThereHeavyCars(carVector) << std::endl;
+    std::cout << "There is car heavier than 1000kgs: " << areThereHeavyCars(carVector) << std::endl;
 
     return 0;
 }
