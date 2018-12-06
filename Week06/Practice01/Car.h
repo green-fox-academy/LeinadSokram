@@ -2,14 +2,23 @@
 #define PRACTICE01_CAR_H
 
 #include <string>
+#include <vector>
 
 class Car
 {
 public:
-    Car(int maxSpeed, const std::string &color, int weight);
+    Car(int speed, const std::string &color, int weight);
+
+    int getSpeed() const;
+    const std::string &getColor() const;
+    int getWeight() const;
+
+    int getGreenNumber(std::vector);
+
+
 
 private:
-    int _maxSpeed;
+    int _speed;
     std::string _color;
     int _weight;
 };
