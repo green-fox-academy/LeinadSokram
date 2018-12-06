@@ -18,7 +18,25 @@ int Car::getWeight() const
     return _weight;
 }
 
-int Car::getGreenNumber(std::vector)
+int Car::getGreenCarNumber(std::vector<Car> carVector)
+{
+    int greenCarNumber = 0;
+
+    for (int i = 0; i < carVector.size(); ++i) {
+        if (carVector[i].getColor() == "green") {
+            greenCarNumber++;
+        }
+    }
+
+    return greenCarNumber;
+}
+
+int Car::getFastestCarWeight(std::vector<Car> carVector)
 {
     return 0;
+}
+
+bool Car::areThereHeavyCars(std::vector<Car> carVector)
+{
+    return false;
 }

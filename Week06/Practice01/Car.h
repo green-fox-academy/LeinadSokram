@@ -13,15 +13,14 @@ public:
     const std::string &getColor() const;
     int getWeight() const;
 
-    int getGreenNumber(std::vector);
-
-
+    int getGreenCarNumber(std::vector<Car> carVector);
+    int getFastestCarWeight(std::vector<Car> carVector);
+    bool areThereHeavyCars(std::vector<Car> carVector);
 
 private:
     int _speed;
     std::string _color;
     int _weight;
 };
-
 
 #endif //PRACTICE01_CAR_H
