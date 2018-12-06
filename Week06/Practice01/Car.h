@@ -8,7 +8,7 @@ class Car
 {
 public:
     Car(int speed, const std::string &color, int weight);
-
+    Car();
     int getSpeed() const;
     const std::string &getColor() const;
     int getWeight() const;

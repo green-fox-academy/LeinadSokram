@@ -3,6 +3,9 @@
 Car::Car(int speed, const std::string &color, int weight) : _speed(speed), _color(color), _weight(weight)
 {}
 
+Car::Car()
+{}
+
 int Car::getSpeed() const
 {
     return _speed;
@@ -23,7 +26,7 @@ int Car::getGreenCarNumber(std::vector<Car> carVector)
     int greenCarNumber = 0;
 
     for (int i = 0; i < carVector.size(); ++i) {
-        if (carVector[i].getColor() == "green") {
+        if (carVector[i].getColor() == "Green") {
             greenCarNumber++;
         }
     }

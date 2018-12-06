@@ -40,16 +40,19 @@ int main()
 
     carFile.close();
 
-    //The above would look waaay better in a function, but I was lazy to rewrite it :)
+    //The things above would look waaay better in a function, but I was lazy to rewrite it :)
 
     for (int i = 0; i < carVector.size(); ++i)
     {
         std::cout << carVector[i].getSpeed() << std::endl;
     }
 
-    std::cout << "The number of green cars is " << getGreenCarNumber(carVector) << std::endl;
-    std::cout << "The weight of the fastest car is " << getFastestCarWeight(CarVector) << std::endl;
-    std::cout << "There is car heavier than 1000kgs: " << areThereHeavyCars(carVector) << std::endl;
+    Car newObject;
+
+
+    std::cout << "The number of green cars is " << newObject.getGreenCarNumber(carVector) << std::endl;
+    std::cout << "The weight of the fastest car is " << newObject.getFastestCarWeight(carVector) << std::endl;
+    std::cout << "There is car heavier than 1000kgs: " << newObject.areThereHeavyCars(carVector) << std::endl;
 
     return 0;
 }
