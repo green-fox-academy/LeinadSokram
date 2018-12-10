@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+int lengthReturner(char *word);
+int lengthReturnerWithoutStringH(char *wordWithoutStringH);
+
 main()
 {
     // Create a program which asks for the name of the user and stores it
@@ -12,5 +15,12 @@ main()
     printf("Enter a username:\n");
     scanf("%s", userName);
 
+    lengthReturner(userName);
+
     return 0;
+}
+
+int lengthReturner(char *word)
+{
+    
 }
