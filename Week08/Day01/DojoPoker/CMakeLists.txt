@@ -1,6 +1,12 @@
-cmake_minimum_required(VERSION 3.13)
-project(DojoPoker)
+cmake_minimum_required(VERSION 3.12)
+project(tdd)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DojoPoker main.cpp tdd_lib/simple.cpp tdd_lib/simple.h tdd_test/simple_test.cpp)
+add_executable(tdd_run main.cpp)
+
+include_directories(tdd_lib)
+add_subdirectory(tdd_lib)
+add_subdirectory(tdd_test)
+
+target_link_libraries(tdd_run tdd)

@@ -1,0 +1,1 @@
+add_library(tdd simple.h simple.cpp)
