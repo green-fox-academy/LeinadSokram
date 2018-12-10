@@ -33,21 +33,24 @@ int main()
     printf("Enter a word:\n");
     scanf("%s", word);
 
-    char character[1];
+    char character[2];
     printf("Enter a single character:\n");
     scanf("%s", character);
 
-    printf("%d", whereIsIt(word, character));
+    printf("%d", whereIsIt(word, character[0]));
 
     return 0;
 }
 
 int whereIsIt(char *checkWord, char checkCharacter)
 {
-    for (int i = 0; i < 20; ++i) {
+    printf("Szia %c\n", checkCharacter);
+    printf("Konicsiva %d\n", strlen(checkWord));
+    for (int i = 0; i < strlen(checkWord); ++i) {
         if (checkWord[i] == checkCharacter) {
+            printf("Hello %c\n", checkWord[i]);
             return i;
         }
-        return -1;
     }
+    return -1;
 }
