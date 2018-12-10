@@ -3,6 +3,7 @@
 #include <string.h>
 
 int lengthReturner(char *word);
+
 int lengthReturnerWithoutStringH(char *wordWithoutStringH);
 
 main()
@@ -13,14 +14,14 @@ main()
 
     char *userName;
     printf("Enter a username:\n");
-    scanf("%s", userName);
+    scanf("%s", &userName);
 
-    lengthReturner(userName);
+    printf(lengthReturner(userName));
 
     return 0;
 }
 
 int lengthReturner(char *word)
 {
-    
+
 }

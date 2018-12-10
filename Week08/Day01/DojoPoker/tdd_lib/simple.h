@@ -3,6 +3,8 @@
 
 #include <vector>
 
+
+
 std::vector<int> rotate(std::vector<int> numbers);
 
 #endif //TDD_SIMPLE_H
