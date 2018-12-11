@@ -8,7 +8,33 @@
 
 int main()
 {
-    int* pointer = NULL;
+    int *pointer = NULL;
+
+    int num_x;
+    printf("Enter a number. You will have to type in that many numbers.\n");
+    scanf("%d", &num_x);
+
+    int *array = (int *) malloc((num_x) * sizeof(int));
+
+    int num_y = 0;
+
+    for (int i = 0; i < num_x; ++i) {
+        printf("Now enter the next number:\n");
+        scanf("%d", &array[i]);
+        num_y += array[i];
+    }
+
+    num_x += 1;
+
+    array = (int *) realloc(array, num_x * sizeof(int));
+
+    array[num_x - 1] = num_y;
+
+    for (int j = 0; j < num_x; ++j) {
+        printf("%d\n", array[j]);
+    }
+
+    free(array);
 
     return 0;
 }
