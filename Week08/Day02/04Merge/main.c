@@ -24,10 +24,6 @@ int main()
         even_count += 2;
     }
 
-    for (int i = 0; i < size; ++i) {
-        printf("%d\n", even[i]);
-    }
-
     odd = (int *) malloc(size * sizeof(int));
 
     for (int j = 0; j < size; ++j) {
@@ -35,30 +31,20 @@ int main()
         odd_count += 2;
     }
 
-    for (int j = 0; j < size; ++j) {
-        printf("%d\n", odd[j]);
-    }
-
-    printf("-------------------\n");
-
     int new_size = 20;
 
-    realloc(even, new_size * sizeof(int));
+    even = realloc(even, new_size * sizeof(int));
 
-    for (int i = 0; i < size; ++i) {
-        printf("%d\n", even[i]);
+    for (int k = 0; k < size; ++k) {
+        even[k+10] = odd[k];
     }
 
-    /*for (int k = 11; k < new_size; ++k)
-        for (int l = 0; l < size; ++l) {
-        even[k] = odd[l];
-            printf("%d\n", even[k]);
+    for (int l = new_size - 1; l >= 0; --l) {
+        printf("%d\n", even[l]);
     }
-    */
 
-    for (int k = 0; k < new_size; ++k) {
-        
-    }
+    free(even);
+    free(odd);
 
     return 0;
 }
