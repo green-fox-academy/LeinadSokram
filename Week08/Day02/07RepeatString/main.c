@@ -11,14 +11,14 @@ char stringRepeater(char word, int multiplier);
 
 int main()
 {
-    char input;
+    char input[100];
     int parameter;
 
     printf("Enter a word:\n");
     scanf("%s", input);
 
     printf("Enter a number:\n");
-    scanf("%d", parameter);
+    scanf("%d", &parameter);
 
     printf(stringRepeater(input, parameter));
 
@@ -27,7 +27,8 @@ int main()
 
 char stringRepeater(char word, int multiplier)
 {
-    char rep_word;
+    char *rep_word;
+
 
     for (int i = 0; i < multiplier; ++i) {
         strcat(rep_word, word);
