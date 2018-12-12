@@ -10,14 +10,14 @@ char *concatenater(char *first, char *second);
 
 int main()
 {
-    char *first_word;
-    char *second_word;
+    char first_word;
+    char second_word;
 
     printf("Enter a word:\n");
-    scanf("%s", &first_word),
+    scanf("%s", first_word),
 
     printf("Enter another word:\n");
-    scanf("%s", &second_word),
+    scanf("%s", second_word),
 
     printf(concatenater(first_word, second_word));
 
@@ -31,7 +31,7 @@ char *concatenater(char *first, char *second)
     char *new_word;
 
     new_word = first;
-    strcat(new_word, second);
+    strcat(new_word, second); //ez is legyen megfelelo meretu
 
     return new_word;
 }

@@ -14,10 +14,10 @@ int main()
     char input;
     int parameter;
 
-    printf("Enter a word:");
+    printf("Enter a word:\n");
     scanf("%s", input);
 
-    printf("Enter a number:");
+    printf("Enter a number:\n");
     scanf("%d", parameter);
 
     printf(stringRepeater(input, parameter));
