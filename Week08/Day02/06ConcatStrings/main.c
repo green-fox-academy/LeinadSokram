@@ -13,8 +13,6 @@ int main()
     char *first_word;
     char *second_word;
 
-    getchar()
-
     printf("Enter a word:\n");
     scanf("%s", &first_word),
 
@@ -22,6 +20,8 @@ int main()
     scanf("%s", &second_word),
 
     printf(concatenater(first_word, second_word));
+
+    //getchar()
 
     return 0;
 }
