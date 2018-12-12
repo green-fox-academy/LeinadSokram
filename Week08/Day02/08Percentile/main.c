@@ -26,46 +26,45 @@ int main()
 
     srand(time(NULL));
 
+    printf("The numbers in the matrix:\n");
+
     for (int i = 0; i < element_num; ++i) {
         matrix[i] = rand();
         printf("%d\n", matrix[i]);
     }
 
-    printf("---------------\n");
+    printf("---\n");
 
-    int discount;
+    int perc;
 
     printf("Which percentile do you want?\n");
-    scanf("%d", &discount);
+    scanf("%d", &perc);
 
-    percentile(discount, matrix, element_num);
+    percentile(perc, matrix, element_num);
 
     return 0;
 }
 
 void percentile(int percent, int elements[], int number)
 {
-    int ascending[number];
-    int relay;
+    int temp;
 
     for (int i = 0; i < number; ++i)
         for (int j = i + 1; j < number; ++j) {
-            if (ascending[i] > ascending[j]) {
-                relay = ascending[i];
-                ascending[i] = ascending[j];
-                ascending[j] = relay;
+            if (elements[i] > elements[j]) {
+                temp = elements[i];
+                elements[i] = elements[j];
+                elements[j] = temp;
             }
         }
 
+    printf("---\nThe numbers in order:\n");
+
     for (int k = 0; k < number; ++k) {
-        printf("%d\n", ascending[k]);
+        printf("%d\n", elements[k]);
     }
 
     float multiplier = (float) number / 100 * (float) percent;
 
-    printf("---------------\n");
-
-    printf("%.0f", multiplier);
-
-    printf("%d", elements[(int)multiplier]);
+    printf("---\nThe %dth percentile is %d", percent, elements[(int) multiplier - 1]);
 }
