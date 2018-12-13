@@ -23,10 +23,6 @@ int main()
     int *relatives;
     relatives = (int *) calloc(rand_relnum, sizeof(int));
 
-    for (int i = 0; i < rand_relnum; ++i) {
-        relatives[i] = 0;
-    }
-
     printf("---\n");
 
     int rand_guest = rand() % rand_relnum;
