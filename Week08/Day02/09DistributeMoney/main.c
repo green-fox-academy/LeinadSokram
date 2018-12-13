@@ -23,7 +23,7 @@ int main()
     int *relatives;
     relatives = (int *) calloc(rand_relnum, sizeof(int));
 
-    printf("---\n");
+    printf("The money will be distributed like this:\n");
 
     int rand_guest = rand() % rand_relnum;
 
@@ -31,15 +31,15 @@ int main()
         if (relatives[rand_guest] == 0) {
             money = money / 2;
             relatives[rand_guest] = money;
-            rand_guest = rand() % rand_relnum;
-        } else if (relatives[rand_guest] > 0) {
-            rand_guest = rand() % rand_relnum;
         }
+        rand_guest = rand() % rand_relnum;
     }
 
     for (int k = 0; k < rand_relnum; ++k) {
         printf("%d,", relatives[k]);
     }
+
+    free(relatives);
 
     return 0;
 }
