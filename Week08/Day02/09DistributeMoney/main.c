@@ -18,12 +18,10 @@ int main()
     srand(time(NULL));
     int rand_relnum = rand() % 30 + 20;
 
-    printf("The number of relatives: %d\n", rand_relnum);
-
-    int rand_guest = rand() % rand_relnum;
+    printf("The number of relatives is: %d\n", rand_relnum);
 
     int *relatives;
-    relatives = (int *) malloc(rand_relnum * sizeof(int));
+    relatives = (int *) calloc(rand_relnum, sizeof(int));
 
     for (int i = 0; i < rand_relnum; ++i) {
         relatives[i] = 0;
@@ -31,12 +29,14 @@ int main()
 
     printf("---\n");
 
-    while(money > 0) {
+    int rand_guest = rand() % rand_relnum;
+
+    while (money > 0) {
         if (relatives[rand_guest] == 0) {
             money = money / 2;
             relatives[rand_guest] = money;
             rand_guest = rand() % rand_relnum;
-        } else if (rand_guest > 0) {
+        } else if (relatives[rand_guest] > 0) {
             rand_guest = rand() % rand_relnum;
         }
     }
