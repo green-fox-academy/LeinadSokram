@@ -15,7 +15,7 @@ int main()
 
     node_t *p = head; //To look at the nodes, first we make a temp pointer.
 
-    while (p != NULL){ //If the pointer is not null... (if it reaches the last element, it becopmes null)
+    while (p != NULL){ //If the pointer is not null... (if it reaches the last element, it becomes null)
         printf("%d,", p->value); //...it will print the value of the node...
         p = p->next; //...then advances to the next one, and repeats.
     }

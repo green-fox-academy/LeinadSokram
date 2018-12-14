@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include "insert.h"
 
-int new_node(node_t **old_head, int new_value) //node_t is the struct which we use in the function (note the double stars!)
+int new_node(node_t **old_head, int new_value) //node_t is the struct which we use in the functio
+                                               // (note the double stars!)
 {
     node_t *node = malloc(sizeof(node_t)); //This allocates an address to a new node.
     node->value = new_value; //This sets the new node's value to the given number.
@@ -21,4 +22,3 @@ int new_node(node_t **old_head, int new_value) //node_t is the struct which we u
 
     return new_value;
 }
-
