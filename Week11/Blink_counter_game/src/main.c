@@ -50,7 +50,7 @@ void button_init() //This initializes the button (on port 11) so it perceives pu
 	button.Pin = GPIO_PIN_11;
 	button.Pull = GPIO_NOPULL;
 	button.Speed = GPIO_SPEED_FAST;
-	button.Mode = GPIO_MODE_IT_RISING;
+	button.Mode = GPIO_MODE_IT_RISING; //RISING - activates when pushed, FALLING - activates when released, RISING_FALLING - both
 
 	HAL_GPIO_Init(GPIOI, &button);
 
@@ -96,7 +96,8 @@ void rand_init() //This initializes the randomizer function
 	HAL_RNG_Init(&rng_handle);
 }
 
-void red_led_init() {
+void red_led_init() //This initializes the PWM function aka. the function to modify the brightness of the led
+{
 	__HAL_RCC_GPIOH_CLK_ENABLE()
 	; //Don't forget to use the correct pin!
 	red_led.Pin = GPIO_PIN_6;
@@ -106,8 +107,7 @@ void red_led_init() {
 	red_led.Alternate = GPIO_AF9_TIM12;
 	HAL_GPIO_Init(GPIOH, &red_led);
 
-	__HAL_RCC_TIM12_CLK_ENABLE()
-	; //This initializes the PWM mode (for this pin only!)
+	__HAL_RCC_TIM12_CLK_ENABLE(); //This initializes the PWM mode (for this pin only! Also needs a PWM-able pin)
 	tim_handle3.Instance = TIM12;
 	tim_handle3.Init.Period = 100;
 	tim_handle3.Init.Prescaler = 1;
@@ -116,7 +116,7 @@ void red_led_init() {
 	HAL_TIM_PWM_Init(&tim_handle3);
 
 	tim_handle_pwm.OCMode = TIM_OCMODE_PWM1;
-	tim_handle_pwm.Pulse = 0; //Currently it's off
+	tim_handle_pwm.Pulse = 0; //Duty cycle is 0, aka. it's off
 	HAL_TIM_PWM_ConfigChannel(&tim_handle3, &tim_handle_pwm, TIM_CHANNEL_1);
 
 	HAL_TIM_Base_Start(&tim_handle3);
@@ -138,14 +138,13 @@ int main(void) {
 
 	BSP_LED_Init(LED_GREEN); //This calls the green led function.
 	timer_init(); //This calls the timer function
-	timer_init_for_push();
+	timer_init_for_push(); //This calls the PWM fuction
 	button_init(); //This calls the button function
 	uart_init(); //This calls the UART function
 	red_led_init(); //This calls the red led function
 	rand_init(); //This calls the randomizer function
 
-	printf(
-			"Welcome to my game! Count the number of blinks, then push the blue button that many times!\r\n");
+	printf("Welcome to my game! Count the number of blinks, then push the blue button that many times!\r\n");
 
 	while (1) {
 
@@ -220,12 +219,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //By default, this i
 		if (game_state == RESULT) {
 			if (push_counter == random_iteration / 2) {
 				__HAL_TIM_SET_COMPARE(&tim_handle3, TIM_CHANNEL_1, 100);
-				printf("Yes, it was %d blinks! You win!\r\n",
-						random_iteration / 2);
+				printf("Yes, it was %d blinks! You win!\r\n", random_iteration / 2);
+				push_counter = 0;
+				game_state = BLINKING;
 			} else {
 				__HAL_TIM_SET_COMPARE(&tim_handle3, TIM_CHANNEL_1, 20);
-				printf("No, it was %d blinks! You lose!\r\n",
-						random_iteration / 2);
+				printf("No, it was %d blinks! You lose!\r\n", random_iteration / 2);
+				push_counter = 0;
+				game_state = BLINKING;
 			}
 		}
 	}

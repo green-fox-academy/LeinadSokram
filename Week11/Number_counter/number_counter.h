@@ -1,0 +1,6 @@
+#ifndef NUMBER_COUNTER_NUMBER_COUNTER_H
+#define NUMBER_COUNTER_NUMBER_COUNTER_H
+
+int read_file(char* file_name);
+
+#endif //NUMBER_COUNTER_NUMBER_COUNTER_H
